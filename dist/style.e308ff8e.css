@@ -37,6 +37,8 @@ label {
     padding-block-end: 18px;
     padding-block-start: 19px;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
 }
 
 .input-add {

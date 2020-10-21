@@ -28445,30 +28445,130 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function WindBnBComponent() {
-  const [stays, setStay] = (0, _react.useState)([]);
+function WindBnBComponent(props) {
+  // const [stays, setStay] = useState([]);
+  // const searchData = async (e) => {
+  //     e.preventDefault();
+  //     console.log("submitting");
+  //     const url = staysData;
+  //     console.log(url);
+  //     try {
+  //         const res = await fetch(url);
+  //         const data = await res.json();
+  //         console.log(data);
+  //         setStay(data.results);
+  //         console.log(stays);
+  //     } catch (err) {
+  //         console.error(err);
+  //     }
+  // }
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "div-layout"
+  }, "return (", /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: props.photo
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "entire-apartment"
+  }, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("span", {
+    className: "super-host"
+  }, "SUPER HOST"), " ", props.superHost), /*#__PURE__*/_react.default.createElement("p", {
+    className: "rooms"
+  }, props.type, " ", props.beds), /*#__PURE__*/_react.default.createElement("p", {
+    className: "rate"
+  }, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    enableBackground: "new 0 0 24 24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    width: "24"
+  }, /*#__PURE__*/_react.default.createElement("g", null, /*#__PURE__*/_react.default.createElement("rect", {
+    fill: "none",
+    height: "24",
+    width: "24",
+    x: "0"
+  }), /*#__PURE__*/_react.default.createElement("polygon", {
+    points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
+  })))), props.rating)), /*#__PURE__*/_react.default.createElement("p", null, props.title)), ")");
+}
 
-  const searchData = async e => {
+var _default = WindBnBComponent;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./stays.json":"stays.json"}],"Form.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Form() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("select", {
+    name: "city",
+    className: "input",
+    on: true
+  }, /*#__PURE__*/_react.default.createElement("option", {
+    value: ""
+  }, "--Please choose an option--"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Helsinki"
+  }, "Helsinki, Finland"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Turku"
+  }, "Turku, Finland"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Oulu"
+  }, "Oulu, Finland"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Vaasa"
+  }, "Vaasa, Finland")), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "Add guest",
+    className: "input-add"
+  }), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit"
+  }, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24",
+    viewBox: "0 0 24 24",
+    width: "24"
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/_react.default.createElement("path", {
+    d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+  }))))));
+}
+
+var _default = Form;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"Search.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _stays = _interopRequireDefault(require("./stays.json"));
+
+var _Form = _interopRequireDefault(require("./Form"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function Search() {
+  const [data, setData] = (0, _react.useState)([]);
+
+  const searchData = e => {
     e.preventDefault();
-    console.log("submitting");
-    const url = _stays.default;
-    console.log(url);
-
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      console.log(data);
-      setStay(data.results);
-      console.log(stays);
-    } catch (err) {
-      console.error(err);
-    }
+    setData(_stays.default);
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
-    onSubmit: searchData,
-    className: "div-layout"
-  }, _stays.default.map(stayData => {
+  const mapData = _stays.default.map(stayData => {
     return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("img", {
       src: stayData.photo
     })), /*#__PURE__*/_react.default.createElement("div", {
@@ -28493,12 +28593,16 @@ function WindBnBComponent() {
     }), /*#__PURE__*/_react.default.createElement("polygon", {
       points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
     })))), stayData.rating)), /*#__PURE__*/_react.default.createElement("p", null, stayData.title));
-  }));
+  });
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: searchData
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, null)), /*#__PURE__*/_react.default.createElement("div", null, mapData));
 }
 
-var _default = WindBnBComponent;
+var _default = Search;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./stays.json":"stays.json"}],"Form.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./stays.json":"stays.json","./Form":"Form.js"}],"Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28508,54 +28612,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Form(props) {
-  return /*#__PURE__*/_react.default.createElement("form", null, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("select", {
-    name: "city",
-    className: "input"
-  }, /*#__PURE__*/_react.default.createElement("option", {
-    value: ""
-  }, "--Please choose an option--"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "helsinki"
-  }, "Helsinki, Finland"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "turku"
-  }, "Turku, Finland"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "oulu"
-  }, "Oulu, Finland"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "vaasa"
-  }, "Vaasa, Finland")), /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: "Add guest",
-    className: "input-add"
-  }), /*#__PURE__*/_react.default.createElement("button", {
-    type: "submit"
-  }, /*#__PURE__*/_react.default.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: "24",
-    viewBox: "0 0 24 24",
-    width: "24"
-  }, /*#__PURE__*/_react.default.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "none"
-  }), /*#__PURE__*/_react.default.createElement("path", {
-    d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-  })))));
-}
-
-var _default = Form;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"Header.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Form = _interopRequireDefault(require("./Form"));
+var _Search = _interopRequireDefault(require("./Search"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28575,12 +28632,12 @@ function Header() {
     d: "M9.22724 7.5C10.3819 5.5 13.2687 5.5 14.4234 7.5L20.0526 17.25C21.2073 19.25 19.7639 21.75 17.4545 21.75H6.19615C3.88675 21.75 2.44338 19.25 3.59808 17.25L9.22724 7.5Z",
     fill: "#EB5757",
     fillOpacity: "0.8"
-  })), /*#__PURE__*/_react.default.createElement(_Form.default, null));
+  })), /*#__PURE__*/_react.default.createElement(_Search.default, null));
 }
 
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Form":"Form.js"}],"AddGuests.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Search":"Search.js"}],"AddGuests.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28664,7 +28721,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50070" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59280" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
