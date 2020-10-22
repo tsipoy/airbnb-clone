@@ -28285,7 +28285,27 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"stays.json":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"AddGuests.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function AddGeusts() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "add-gests"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Stays in Finland"), /*#__PURE__*/_react.default.createElement("p", null, "4 stays"));
+}
+
+var _default = AddGeusts;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"stays.json":[function(require,module,exports) {
 module.exports = [{
   "city": "Helsinki",
   "country": "Finland",
@@ -28427,7 +28447,7 @@ module.exports = [{
   "beds": 3,
   "photo": "https://images.unsplash.com/photo-1523755231516-e43fd2e8dca5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
 }];
-},{}],"WindBnbComponent.js":[function(require,module,exports) {
+},{}],"Form.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28435,44 +28455,78 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
-
-var _stays = _interopRequireDefault(require("./stays.json"));
+var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+function Form(props) {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("select", {
+    name: "city",
+    className: "input",
+    value: props.location,
+    onChange: props.selectCity
+  }, /*#__PURE__*/_react.default.createElement("option", {
+    value: ""
+  }, "--Please choose an option--"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "helsinki"
+  }, "Helsinki"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "turku"
+  }, "Turku"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "oulu"
+  }, "Oulu"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "vaasa"
+  }, "Vaasa")), /*#__PURE__*/_react.default.createElement("input", {
+    type: "number",
+    placeholder: "Add guest",
+    value: props.guests,
+    className: "input-add",
+    onChange: props.chooseGuest
+  }), /*#__PURE__*/_react.default.createElement("button", {
+    type: "submit"
+  }, /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24",
+    viewBox: "0 0 24 24",
+    width: "24"
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/_react.default.createElement("path", {
+    d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+  })))));
+}
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var _default = Form;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"WindBnbComponent.js":[function(require,module,exports) {
+"use strict";
 
-function WindBnBComponent(props) {
-  // const [stays, setStay] = useState([]);
-  // const searchData = async (e) => {
-  //     e.preventDefault();
-  //     console.log("submitting");
-  //     const url = staysData;
-  //     console.log(url);
-  //     try {
-  //         const res = await fetch(url);
-  //         const data = await res.json();
-  //         console.log(data);
-  //         setStay(data.results);
-  //         console.log(stays);
-  //     } catch (err) {
-  //         console.error(err);
-  //     }
-  // }
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "div-layout"
-  }, "return (", /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: props.photo
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function WindBnBComponent({
+  photo,
+  superHost,
+  type,
+  title,
+  beds,
+  rating
+}) {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: photo
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "entire-apartment"
   }, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("span", {
     className: "super-host"
-  }, "SUPER HOST"), " ", props.superHost), /*#__PURE__*/_react.default.createElement("p", {
+  }, "SUPER HOST"), " ", superHost), /*#__PURE__*/_react.default.createElement("p", {
     className: "rooms"
-  }, props.type, " ", props.beds), /*#__PURE__*/_react.default.createElement("p", {
+  }, type, " ", beds), /*#__PURE__*/_react.default.createElement("p", {
     className: "rate"
   }, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -28487,58 +28541,10 @@ function WindBnBComponent(props) {
     x: "0"
   }), /*#__PURE__*/_react.default.createElement("polygon", {
     points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
-  })))), props.rating)), /*#__PURE__*/_react.default.createElement("p", null, props.title)), ")");
+  })))), rating)), /*#__PURE__*/_react.default.createElement("p", null, title));
 }
 
 var _default = WindBnBComponent;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","./stays.json":"stays.json"}],"Form.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Form() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("select", {
-    name: "city",
-    className: "input",
-    on: true
-  }, /*#__PURE__*/_react.default.createElement("option", {
-    value: ""
-  }, "--Please choose an option--"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Helsinki"
-  }, "Helsinki, Finland"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Turku"
-  }, "Turku, Finland"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Oulu"
-  }, "Oulu, Finland"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Vaasa"
-  }, "Vaasa, Finland")), /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: "Add guest",
-    className: "input-add"
-  }), /*#__PURE__*/_react.default.createElement("button", {
-    type: "submit"
-  }, /*#__PURE__*/_react.default.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: "24",
-    viewBox: "0 0 24 24",
-    width: "24"
-  }, /*#__PURE__*/_react.default.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "none"
-  }), /*#__PURE__*/_react.default.createElement("path", {
-    d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-  }))))));
-}
-
-var _default = Form;
 exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"Search.js":[function(require,module,exports) {
 "use strict";
@@ -28554,55 +28560,70 @@ var _stays = _interopRequireDefault(require("./stays.json"));
 
 var _Form = _interopRequireDefault(require("./Form"));
 
+var _WindBnbComponent = _interopRequireDefault(require("./WindBnbComponent"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function Search() {
   const [data, setData] = (0, _react.useState)([]);
+  const [location, setLocation] = (0, _react.useState)("");
+  const [maxGuest, setMaxGuest] = (0, _react.useState)("");
+
+  const searchCities = e => {
+    setLocation(e.target.value);
+
+    const filteredCities = _stays.default.filter(stay => {
+      return stay.city.toLowerCase() === e.target.value;
+    });
+
+    setData(filteredCities);
+  };
+
+  const addGuest = e => {
+    setMaxGuest(e.target.value);
+
+    const filteredMaxGuest = _stays.default.filter(guest => {
+      return guest.maxGuests.toString() === e.target.value;
+    });
+
+    setData(filteredMaxGuest);
+  };
 
   const searchData = e => {
     e.preventDefault();
     setData(_stays.default);
   };
 
-  const mapData = _stays.default.map(stayData => {
-    return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("img", {
-      src: stayData.photo
-    })), /*#__PURE__*/_react.default.createElement("div", {
-      className: "entire-apartment"
-    }, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("span", {
-      className: "super-host"
-    }, "SUPER HOST"), " ", stayData.superHost), /*#__PURE__*/_react.default.createElement("p", {
-      className: "rooms"
-    }, stayData.type, " ", stayData.beds), /*#__PURE__*/_react.default.createElement("p", {
-      className: "rate"
-    }, /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement("svg", {
-      xmlns: "http://www.w3.org/2000/svg",
-      enableBackground: "new 0 0 24 24",
-      height: "24",
-      viewBox: "0 0 24 24",
-      width: "24"
-    }, /*#__PURE__*/_react.default.createElement("g", null, /*#__PURE__*/_react.default.createElement("rect", {
-      fill: "none",
-      height: "24",
-      width: "24",
-      x: "0"
-    }), /*#__PURE__*/_react.default.createElement("polygon", {
-      points: "14.43,10 12,2 9.57,10 2,10 8.18,14.41 5.83,22 12,17.31 18.18,22 15.83,14.41 22,10"
-    })))), stayData.rating)), /*#__PURE__*/_react.default.createElement("p", null, stayData.title));
-  });
+  const mapData = data.map(stayData => {
+    return /*#__PURE__*/_react.default.createElement(_WindBnbComponent.default, _extends({
+      key: stayData.title
+    }, stayData));
+  }); // console.log(mapData);
+
+  const mapFiltered = _stays.default.map(stay => /*#__PURE__*/_react.default.createElement(_WindBnbComponent.default, _extends({
+    key: stay.title
+  }, stay)));
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: searchData
-  }, /*#__PURE__*/_react.default.createElement(_Form.default, null)), /*#__PURE__*/_react.default.createElement("div", null, mapData));
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, {
+    selectCity: searchCities,
+    chooseGuest: addGuest,
+    guests: maxGuest
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    className: "div-layout"
+  }, location || maxGuest ? mapData : mapFiltered));
 }
 
 var _default = Search;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./stays.json":"stays.json","./Form":"Form.js"}],"Header.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./stays.json":"stays.json","./Form":"Form.js","./WindBnbComponent":"WindBnbComponent.js"}],"Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28637,7 +28658,7 @@ function Header() {
 
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Search":"Search.js"}],"AddGuests.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Search":"Search.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28646,42 +28667,22 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function AddGeusts() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "add-gests"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "Stays in Finland"), /*#__PURE__*/_react.default.createElement("p", null, "4 stays"));
-}
-
-var _default = AddGeusts;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _WindBnbComponent = _interopRequireDefault(require("./WindBnbComponent"));
-
-var _Header = _interopRequireDefault(require("./Header"));
 
 var _AddGuests = _interopRequireDefault(require("./AddGuests"));
 
+var _Header = _interopRequireDefault(require("./Header"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import WindBnbComponent from "./WindBnbComponent";
+// import Search from "./Search";
 function App() {
-  return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement(_Header.default, null), /*#__PURE__*/_react.default.createElement(_AddGuests.default, null), /*#__PURE__*/_react.default.createElement(_WindBnbComponent.default, null));
+  return /*#__PURE__*/_react.default.createElement("main", null, /*#__PURE__*/_react.default.createElement(_AddGuests.default, null), /*#__PURE__*/_react.default.createElement(_Header.default, null));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./WindBnbComponent":"WindBnbComponent.js","./Header":"Header.js","./AddGuests":"AddGuests.js"}],"script.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./AddGuests":"AddGuests.js","./Header":"Header.js"}],"script.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -28721,7 +28722,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59280" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59036" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

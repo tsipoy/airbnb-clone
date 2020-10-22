@@ -1,14 +1,15 @@
 import React from "react";
-import WindBnbComponent from "./WindBnbComponent";
+import AddGeusts from "./AddGuests";
 import Header from "./Header";
-import AddGeusts from "./AddGuests"
+// import WindBnbComponent from "./WindBnbComponent";
+// import Search from "./Search";
 
 function App() {
     return (
         <main>
-            <Header />
             <AddGeusts />
-            <WindBnbComponent />
+            <Header />
+            {/* <WindBnbComponent /> */}
         </main>
     )
 }
