@@ -56,6 +56,13 @@ button {
     background-color: transparent;
 }
 
+.openButton {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .logo {
     padding-block-end: 39px;
 }
@@ -95,6 +102,45 @@ img {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+svg {
+    fill: #EB5757;
+}
+
+.span1 {
+    text-align: center;
+    border: none;
+    padding-block-end: 18px;
+    padding-block-start: 19px;
+    padding-inline-start: 18px;
+    padding-inline-end: 18px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.span2 {
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding-block-end: 18px;
+    padding-block-start: 19px;
+    padding-inline-end: 18px;
+    padding-inline-start: 18px;
+    text-align: center;
+}
+
+.span3 {
+    text-align: center;
+    border: none;
+    padding-block-end: 5px;
+    padding-block-start: 19px;
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
 
 @media(min-width: 800px) {
