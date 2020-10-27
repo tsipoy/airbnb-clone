@@ -28440,7 +28440,9 @@ var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Form(props) {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("select", {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "formDiv"
+  }, /*#__PURE__*/_react.default.createElement("select", {
     name: "city",
     className: "input",
     value: props.location,
@@ -28462,7 +28464,8 @@ function Form(props) {
     className: "input-add",
     onChange: props.chooseGuest
   }), /*#__PURE__*/_react.default.createElement("button", {
-    type: "submit"
+    type: "submit",
+    className: "searchBtn"
   }, /*#__PURE__*/_react.default.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     height: "24",
@@ -28473,7 +28476,7 @@ function Form(props) {
     fill: "none"
   }), /*#__PURE__*/_react.default.createElement("path", {
     d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-  })))));
+  })), /*#__PURE__*/_react.default.createElement("span", null, "Search")));
 }
 
 var _default = Form;
@@ -28502,9 +28505,9 @@ function WindBnBComponent({
     src: photo
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "entire-apartment"
-  }, /*#__PURE__*/_react.default.createElement("p", null, /*#__PURE__*/_react.default.createElement("span", {
+  }, superHost && /*#__PURE__*/_react.default.createElement("span", {
     className: "super-host"
-  }, "SUPER HOST"), superHost), /*#__PURE__*/_react.default.createElement("p", {
+  }, "SUPER HOST"), /*#__PURE__*/_react.default.createElement("p", {
     className: "rooms"
   }, type, " ", beds), /*#__PURE__*/_react.default.createElement("p", {
     className: "rate"
@@ -28526,6 +28529,26 @@ function WindBnBComponent({
 
 var _default = WindBnBComponent;
 exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"AddGuests.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function AddGeusts() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "add-gests"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Stays in Finland"), /*#__PURE__*/_react.default.createElement("p", null, "4 stays"));
+}
+
+var _default = AddGeusts;
+exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"Search.js":[function(require,module,exports) {
 "use strict";
 
@@ -28542,6 +28565,8 @@ var _Form = _interopRequireDefault(require("./Form"));
 
 var _WindBnbComponent = _interopRequireDefault(require("./WindBnbComponent"));
 
+var _AddGuests = _interopRequireDefault(require("./AddGuests"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -28554,6 +28579,7 @@ function Search() {
   const [data, setData] = (0, _react.useState)([]);
   const [location, setLocation] = (0, _react.useState)("");
   const [maxGuest, setMaxGuest] = (0, _react.useState)("");
+  const [isOpen, setIsOpen] = (0, _react.useState)(false);
 
   const searchCities = e => {
     setLocation(e.target.value);
@@ -28580,6 +28606,10 @@ function Search() {
     setData(_stays.default);
   };
 
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   const mapData = data.map(stayData => {
     return /*#__PURE__*/_react.default.createElement(_WindBnbComponent.default, _extends({
       key: stayData.title
@@ -28590,42 +28620,9 @@ function Search() {
     key: stay.title
   }, stay)));
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
-    onSubmit: searchData
-  }, /*#__PURE__*/_react.default.createElement(_Form.default, {
-    selectCity: searchCities,
-    chooseGuest: addGuest,
-    guests: maxGuest
-  })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "div-layout"
-  }, location || maxGuest ? mapData : mapFiltered));
-}
-
-var _default = Search;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","./stays.json":"stays.json","./Form":"Form.js","./WindBnbComponent":"WindBnbComponent.js"}],"Button.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _Search = _interopRequireDefault(require("./Search"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function Button() {
-  const [isOpen, setIsOpen] = (0, _react.useState)(false);
-  return /*#__PURE__*/_react.default.createElement("div", null, isOpen ? /*#__PURE__*/_react.default.createElement(_Search.default, null) : null, /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     className: "openButton",
-    onClick: () => setIsOpen(!isOpen)
+    onClick: handleClick
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "span1"
   }, "Helsinki, Finland"), /*#__PURE__*/_react.default.createElement("span", {
@@ -28642,12 +28639,20 @@ function Button() {
     fill: "none"
   }), /*#__PURE__*/_react.default.createElement("path", {
     d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-  })))));
+  })))), isOpen && /*#__PURE__*/_react.default.createElement("form", {
+    onSubmit: searchData
+  }, /*#__PURE__*/_react.default.createElement(_Form.default, {
+    selectCity: searchCities,
+    chooseGuest: addGuest,
+    guests: maxGuest
+  }))), /*#__PURE__*/_react.default.createElement(_AddGuests.default, null), /*#__PURE__*/_react.default.createElement("div", {
+    className: "div-layout"
+  }, location || maxGuest ? mapData : mapFiltered));
 }
 
-var _default = Button;
+var _default = Search;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Search":"Search.js"}],"AddGuests.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./stays.json":"stays.json","./Form":"Form.js","./WindBnbComponent":"WindBnbComponent.js","./AddGuests":"AddGuests.js"}],"Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28656,32 +28661,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function AddGeusts() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "add-gests"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "Stays in Finland"), /*#__PURE__*/_react.default.createElement("p", null, "4 stays"));
-}
-
-var _default = AddGeusts;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"Header.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Button = _interopRequireDefault(require("./Button"));
 
 var _Search = _interopRequireDefault(require("./Search"));
-
-var _AddGuests = _interopRequireDefault(require("./AddGuests"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28701,12 +28682,12 @@ function Header() {
     d: "M9.22724 7.5C10.3819 5.5 13.2687 5.5 14.4234 7.5L20.0526 17.25C21.2073 19.25 19.7639 21.75 17.4545 21.75H6.19615C3.88675 21.75 2.44338 19.25 3.59808 17.25L9.22724 7.5Z",
     fill: "#EB5757",
     fillOpacity: "0.8"
-  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.default, null)), /*#__PURE__*/_react.default.createElement(_AddGuests.default, null), /*#__PURE__*/_react.default.createElement(_Search.default, null));
+  })), /*#__PURE__*/_react.default.createElement(_Search.default, null));
 }
 
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Button":"Button.js","./Search":"Search.js","./AddGuests":"AddGuests.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Search":"Search.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28766,7 +28747,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62282" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54141" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
