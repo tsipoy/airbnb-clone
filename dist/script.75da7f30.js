@@ -28442,7 +28442,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Form(props) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "formDiv"
-  }, /*#__PURE__*/_react.default.createElement("select", {
+  }, /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("select", {
     name: "city",
     className: "input",
     value: props.location,
@@ -28451,19 +28451,29 @@ function Form(props) {
     value: ""
   }, "--Please choose an option--"), /*#__PURE__*/_react.default.createElement("option", {
     value: "helsinki"
-  }, "Helsinki"), /*#__PURE__*/_react.default.createElement("option", {
+  }, "Helsinki, Finland"), /*#__PURE__*/_react.default.createElement("option", {
     value: "turku"
-  }, "Turku"), /*#__PURE__*/_react.default.createElement("option", {
+  }, "Turku, Finland"), /*#__PURE__*/_react.default.createElement("option", {
     value: "oulu"
-  }, "Oulu"), /*#__PURE__*/_react.default.createElement("option", {
+  }, "Oulu, Finland"), /*#__PURE__*/_react.default.createElement("option", {
     value: "vaasa"
-  }, "Vaasa")), /*#__PURE__*/_react.default.createElement("input", {
+  }, "Vaasa, Finland")), /*#__PURE__*/_react.default.createElement("div", {
+    className: "searchLocation"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    onChange: props.searchCityByBtn
+  }, "Helsinki"), /*#__PURE__*/_react.default.createElement("button", {
+    onChange: props.searchCityByBtn
+  }, "Turku"), /*#__PURE__*/_react.default.createElement("button", {
+    onChange: props.searchCityByBtn
+  }, "Oulu"), /*#__PURE__*/_react.default.createElement("button", {
+    onChange: props.searchCityByBtn
+  }, "Vaasa"))), /*#__PURE__*/_react.default.createElement("label", null, /*#__PURE__*/_react.default.createElement("input", {
     type: "number",
     placeholder: "Add guest",
     value: props.guests,
     className: "input-add",
     onChange: props.chooseGuest
-  }), /*#__PURE__*/_react.default.createElement("button", {
+  })), /*#__PURE__*/_react.default.createElement("button", {
     type: "submit",
     className: "searchBtn"
   }, /*#__PURE__*/_react.default.createElement("svg", {
@@ -28591,6 +28601,16 @@ function Search() {
     setData(filteredCities);
   };
 
+  const searchCityByBtn = e => {
+    setLocation(e.target.textContent);
+
+    const filteredCities = _stays.default.filter(stay => {
+      return stay.city.toLowerCase() === e.target.textContent;
+    });
+
+    setData(filteredCities);
+  };
+
   const addGuest = e => {
     setMaxGuest(e.target.value);
 
@@ -28614,7 +28634,7 @@ function Search() {
     return /*#__PURE__*/_react.default.createElement(_WindBnbComponent.default, _extends({
       key: stayData.title
     }, stayData));
-  }); // console.log(mapData);
+  });
 
   const mapFiltered = _stays.default.map(stay => /*#__PURE__*/_react.default.createElement(_WindBnbComponent.default, _extends({
     key: stay.title
@@ -28643,6 +28663,7 @@ function Search() {
     onSubmit: searchData
   }, /*#__PURE__*/_react.default.createElement(_Form.default, {
     selectCity: searchCities,
+    chooseCities: searchCityByBtn,
     chooseGuest: addGuest,
     guests: maxGuest
   }))), /*#__PURE__*/_react.default.createElement(_AddGuests.default, null), /*#__PURE__*/_react.default.createElement("div", {
@@ -28747,7 +28768,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54141" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59311" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

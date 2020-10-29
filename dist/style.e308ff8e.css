@@ -125,6 +125,13 @@ button {
     padding-block-end: 39px;
 }
 
+.searchLocation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
 
 img {
     width: 100%;
@@ -220,6 +227,11 @@ svg {
 
     .logo {
         padding-block-end: 0;
+    }
+
+    .searchBtn {
+        margin: auto;
+        margin-block-start: inherit;
     }
 }
 

@@ -19,6 +19,14 @@ function Search() {
         setData(filteredCities)
     }
 
+    const searchCityByBtn = (e) => {
+        setLocation(e.target.textContent);
+        const filteredCities = staysData.filter(stay => {
+            return stay.city.toLowerCase() === e.target.textContent;
+        })
+        setData(filteredCities)
+    }
+
     const addGuest = (e) => {
         setMaxGuest(e.target.value);
         const filteredMaxGuest = staysData.filter(guest => {
@@ -40,8 +48,6 @@ function Search() {
     const mapData = data.map(stayData => {
         return <WindBnbComponent key={stayData.title} {...stayData} />
     })
-    // console.log(mapData);
-
 
     const mapFiltered = staysData.map(stay => <WindBnbComponent key={stay.title} {...stay} />
     )
@@ -57,7 +63,7 @@ function Search() {
                 </button>
                 {isOpen &&
                     <form onSubmit={searchData}>
-                        <Form selectCity={searchCities} chooseGuest={addGuest} guests={maxGuest} />
+                        <Form selectCity={searchCities} chooseCities={searchCityByBtn} chooseGuest={addGuest} guests={maxGuest} />
                     </form>
                 }
             </div>
