@@ -14,7 +14,7 @@ form {
 }
 
 html {
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -114,12 +114,12 @@ button {
     width: 100%;
 } */
 
-.openButton {
+/* .openButton {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-}
+} */
 
 .logo {
     padding-block-end: 39px;
@@ -139,7 +139,7 @@ img {
     border-radius: 24px;
 }
 
-.super-host {
+/* .super-host {
     border: 1px solid #4F4F4F;
     box-sizing: border-box;
     border-radius: 12px;
@@ -147,27 +147,27 @@ img {
     padding-block-start: 7px;
     padding-inline-start: 10px;
     padding-inline-end: 9px;
-}
+} */
 
-.entire-apartment {
+/* .entire-apartment {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-}
+} */
 
-.rooms {
+/* .rooms {
     font-size: 14px;
     line-height: 17px;
     color: #828282;
-}
+} */
 
-.rate {
+/* .rate {
     display: flex;
     flex-direction: row;
     align-items: center;
-}
+} */
 
 svg {
     fill: #EB5757;
@@ -209,9 +209,9 @@ svg {
 }
 
 @media(min-width: 800px) {
-    main {
-        padding-inline-start: 96px;
-        padding-inline-end: 95px;
+    header, main {
+        margin: auto;
+        max-width: 1500px;
     }
 
     .formDiv {
@@ -219,11 +219,11 @@ svg {
         flex-direction: row;
     }
     
-    .div-layout {
+    /* .div-layout {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 34px;
-    }
+    } */
 
     .logo {
         padding-block-end: 0;

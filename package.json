@@ -21,6 +21,7 @@
   "homepage": "https://github.com/tsipoy/airbnb-clone#readme",
   "dependencies": {
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "styled-components": "^5.2.1"
   }
 }
